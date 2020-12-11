@@ -4,6 +4,7 @@ import TreatmentTable from './component/TreatmentTable';
 import { Formik, Form, Field } from 'formik'
 import axios from 'axios'
 import history from '../history'
+import './treatment.scss'
 
 
 class Treatement extends Component{
@@ -22,24 +23,26 @@ class Treatement extends Component{
     }
     render() {
         if (this.state.status == 0) {
-            return <Formik
-                initialValues={{
-                    give_name: ""
-                }}
-                onSubmit={async (values) => {
-                    this.setState({
-                        patient_name: values.give_name,
-                        status: 1
-                    })
-                    values.give_name = ""
-                }}
-                    >
-                <Form>
-                    <div>Veuillez saisir votre nom</div>
-                    <Field name="give_name" type="text" required/>
-                    <button type="submit">Submit</button>
-                </Form>
-            </Formik>
+            return <div className="form-box flex-box">
+                <Formik
+                    initialValues={{
+                        give_name: ""
+                    }}
+                    onSubmit={async (values) => {
+                        this.setState({
+                            patient_name: values.give_name,
+                            status: 1
+                        })
+                        values.give_name = ""
+                    }}
+                        >
+                    <Form className="form flex-box">
+                        <div>Veuillez saisir votre nom</div>
+                        <Field name="give_name" type="text" required/>
+                        <button type="submit">Submit</button>
+                    </Form>
+                </Formik>
+            </div>
         }
         if (this.state.status == 1) {
             return <div>
