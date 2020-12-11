@@ -21,7 +21,7 @@ function TreatmentTable({filterText}){
             return
         }
         row.push(<div key={treatment.id}>
-            <Field type="radio" name="treatment_id" value={treatment.id} />
+            <Field type="radio" name="treatment_id" value={treatment.id} required />
             <label >{ treatment.attributes.name }</label>
         </div>) 
     }) 

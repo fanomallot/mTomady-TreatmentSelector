@@ -56,9 +56,12 @@ class Category extends Component{
                     treatment_id: ""
                 }}
                 onSubmit={async (values) => {
-                    alert('Donnez sauvegarder')
                     axios.post('/treatment_patient_refs', values)
-                    .then(resp =>{})
+                        .then(resp => {
+                            if (resp.status == 204) {
+                            alert('Donnez sauvegarder')
+                        }
+                    })
                     .catch(resp =>{})
                     values.treatment_id = ""
                     values.patient = " "

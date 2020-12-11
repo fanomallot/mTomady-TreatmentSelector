@@ -1,9 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import './home.css';
 const Home = () => (
     <div className="home-box">
         <div className="content">
-            Welcome to mTomady
+            <p>Welcome to mTomady</p> 
             <Link to={"/treatments"}>Get Treatment</Link>
         </div>
     </div>

@@ -5,7 +5,7 @@ class PatientsController < ApplicationController
     render json: PatientSerializer.new(patients).serialized_json
   end
   def show
-    patients = Patient.find(params[:id])
+    patients = Patient.find_by(params[:id])
     render json: PatientSerializer.new(patients).serialized_json
   end
   def create

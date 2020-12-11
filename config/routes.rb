@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   resources :admins,path: 'api/mtomady/admin',controller: 'admins'
   get 'api/mtomady/treatments',to: 'treatments#fullindex'
+  get 'api/mtomady/admin/log/:name/:password',to: 'admins#sign'
   resources :patients,path: 'api/mtomady/patient',controller: 'patients'
   resources :treatment_patient_refs,only: [:create],controller: 'tprs'
 

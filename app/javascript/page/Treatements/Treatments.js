@@ -50,17 +50,21 @@ class Treatement extends Component{
                             patient: `${this.state.patient_name}`,
                             treatment_id: ""
                         }}
-                    onSubmit={async (values) => {
-                            axios.post('/treatment_patient_refs', values)
-                            .then(resp =>{console.log(resp)})
-                                .catch(resp => { })
-                            values.treatment_id = ""
-                            values.patient = " "
-                            this.setState({
-                                filterText: ''
-                            })
-                            history.push('/')
-                            window.location.reload()
+                    onSubmit={async (values) => {  
+                        axios.post('/treatment_patient_refs', values)
+                            .then(resp => {
+                                if (resp.status == 204) {
+                                    alert('Donnez sauvegarder')
+                            }
+                        })
+                            .catch(resp => { })
+                        values.treatment_id = ""
+                        values.patient = " "
+                        this.setState({
+                            filterText: ''
+                        })
+                        history.push('/')
+                        window.location.reload()
                         }}
                             >
                     <Form>

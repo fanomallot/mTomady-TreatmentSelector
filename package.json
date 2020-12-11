@@ -9,7 +9,6 @@
     "@rails/webpacker": "4.3.0",
     "axios": "^0.21.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "bootstrap": "^5.0.0-beta1",
     "formik": "^2.2.5",
     "history": "^5.0.0",
     "i18n": "^0.13.2",
