@@ -1,0 +1,27 @@
+{
+  "name": "sdfs5d",
+  "private": true,
+  "dependencies": {
+    "@babel/preset-react": "^7.12.7",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "4.3.0",
+    "axios": "^0.21.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "bootstrap": "^5.0.0-beta1",
+    "formik": "^2.2.5",
+    "history": "^5.0.0",
+    "i18n": "^0.13.2",
+    "i18next": "^19.8.4",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "turbolinks": "^5.2.0"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.0"
+  }
+}
