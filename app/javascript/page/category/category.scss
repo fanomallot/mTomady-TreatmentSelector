@@ -1,0 +1,49 @@
+@import '../config';
+
+.next-form {
+  .name {
+    text-align: center;
+    font-size: 18px;
+    margin: 20px 0;
+    span {
+      font-weight: bold;
+    }
+  }
+  .form-field {
+    margin: 20px auto;
+    width: 350px;
+    input {
+      width: 95%;
+    }
+  }
+  .formcheck2 {
+    text-align: center;
+    width: 90%;
+    margin: 5px auto;
+    border: $border;
+    padding: 10px;
+  }
+}
+.category-box {
+  background: $bg_form;
+  position: relative;
+  width: 350px;
+  text-align: center;
+  margin: 5px auto;
+  padding: 15px;
+  .search-box {
+    margin: 10px 0;
+    input {
+      width: 80%;
+    }
+  }
+  img {
+    position: absolute;
+    cursor: pointer;
+    z-index: 100;
+    right: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+  }
+}

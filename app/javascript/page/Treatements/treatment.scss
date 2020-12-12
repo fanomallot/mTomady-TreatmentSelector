@@ -1,14 +1,31 @@
-.form-box {
-  height: 70vh;
-  .form {
-    background: red;
-    width: 50%;
-    margin: 0 auto;
+@import '../config';
+
+.next-form {
+  .name {
+    text-align: center;
+    font-size: 18px;
+    margin: 20px 0;
+    span {
+      font-weight: bold;
+    }
+  }
+  .form-field {
+    margin: 20px auto;
+    width: 350px;
+    input {
+      width: 95%;
+    }
+  }
+  .form-check {
+    width: 350px;
+    text-align: center;
+    margin: 5px auto;
+    padding: 15px;
+    border: $border;
   }
 }
-.flex-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+
+.button {
+  text-align: center;
+  margin: 10px;
 }

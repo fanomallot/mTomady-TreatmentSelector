@@ -1,5 +1,10 @@
 class TprsController < ApplicationController
   protect_from_forgery with: :null_session
+
+  def index
+    tpr = TreatmentPatientRef.find_by(patient_id: params[:patient_id])
+    render json: TreatmentPatientRefSerializer.new(tpr).serialized_json
+  end
   def create
     array = []
     patient = Patient.find_by(name: params[:patient])

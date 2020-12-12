@@ -4,6 +4,7 @@ import { Formik, Form, Field } from 'formik';
 import CategoryList from './components/CategoryList';
 import Searchbar from '../Treatements/component/Searchbar';
 import history from '../history';
+import './category.scss'
 
 class Category extends Component{
     constructor(props){
@@ -12,7 +13,7 @@ class Category extends Component{
             filterTextCategory: "",
             filterTextTreatment: "",
             patient_name: "",
-            status: 0
+            status: 1
         }
         this.findtextCategory = this.findtextCategory.bind(this)
         this.findtextTreatment = this.findtextTreatment.bind(this)
@@ -27,29 +28,30 @@ class Category extends Component{
 
     render() {
         if (this.state.status == 0) {
-            return <Formik
-                initialValues={{
-                    give_name: ""
-                }}
-                onSubmit={async (values) => {
-                    this.setState({
-                        patient_name: values.give_name,
-                        status: 1
-                    })
-                    values.give_name = ""
-                }}
-                    >
-                <Form>
-                    <div>Veuillez saisir votre nom</div>
-                    <Field name="give_name" type="text" required/>
-                    <button type="submit">Submit</button>
-                </Form>
-            </Formik>
+            return <div className="form-box flex-box flex-d-c">
+                <Formik
+                    initialValues={{
+                        give_name: ""
+                    }}
+                    onSubmit={async (values) => {
+                        this.setState({
+                            patient_name: values.give_name,
+                            status: 1
+                        })
+                        values.give_name = ""
+                    }}
+                        >
+                    <Form className="form">
+                        <p>Type your name.</p>
+                        <Field name="give_name" type="text" required placeholder="Name"/>
+                        <button type="submit">Submit</button>
+                    </Form>
+                </Formik>
+            </div>
         }
 
-    return <div className="home-box">
-        <div className="content">
-        Bienvenue {this.state.patient_name}
+        return <div className="next-form">
+            <div className="name">Welcome <span>{this.state.patient_name}</span> </div>
             <Formik
                 initialValues={{
                     patient: `${this.state.patient_name}`,
@@ -70,27 +72,25 @@ class Category extends Component{
                 }}
                     >
                 <Form>
-                    <Field name="patient" type="text" value={this.state.patient_name} required hidden />
-                    <label >Find Category</label>
-                    <Searchbar
-                    filterText={this.state.filterTextCategory}
-                    onFindtext={this.findtextCategory}
-                    />
-                    <label >Find Treatement</label>
-                    <Searchbar
-                    filterText={this.state.filterTextTreatment}
-                    onFindtext={this.findtextTreatment}
-                    />
+                    <Field name="patient" type="text" required hidden />
+                    <div className="form-field">
+                        <label >Find Category</label>
+                        <Searchbar
+                        filterText={this.state.filterTextCategory}
+                        onFindtext={this.findtextCategory}
+                        />
+                    </div>
                     
                     <CategoryList
+                    onFindtextSearch={this.findtextTreatment}
                     filterText={this.state.filterTextTreatment}
                     filterTextC={this.state.filterTextCategory}
                     />
-                    <button type="submit">Submit</button>
+                    <div className="button">
+                        <button type="submit">Submit</button>
+                    </div>
                 </Form>
             </Formik>
-            
-        </div>
     </div>
    } 
 }

@@ -4,6 +4,10 @@ class TreatmentsController < ApplicationController
     treatments = Treatment.all
     render json: TreatmentSerializer.new(treatments).serialized_json
   end
+  def show
+    treatment = Treatment.find(params[:id])
+    render json: TreatmentSerializer.new(treatment).serialized_json
+  end
   def index
     category = Category.find(params[:category_id])
     treatments = category.treatments

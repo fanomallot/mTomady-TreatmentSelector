@@ -1,10 +1,12 @@
 import React, {useState,useEffect} from 'react';
 import axios from 'axios'
 import CategoryTreatment from './CategoryTreatement';
+import Searchbar from '../../Treatements/component/Searchbar';
+import '../category.scss';
+import { func } from 'prop-types';
 
 
-
-const CategoryList = ({filterText,filterTextC}) => {
+const CategoryList = ({filterText,filterTextC,onFindtextSearch}) => {
     const [categories, setCategories] = useState([])
     const [status, setStatus] = useState(0)
     
@@ -22,20 +24,39 @@ const CategoryList = ({filterText,filterTextC}) => {
         if (category.attributes.name.toUpperCase().indexOf(filterTextC.toUpperCase()) === -1) { 
             return
         }
+        function change() {
+            if (status === category.id) {
+                setStatus(0)
+            } else {
+                setStatus(category.id)
+            }
+        }
         return (
-            <li key={key} onClick={() => { setStatus(category.id)}}>
+            <div key={key} className="category-box" >
                 {category.attributes.name}
-                {status == category.id ? 
-                (<CategoryTreatment
-                    category_id={category.id}
-                    treatmentValue={filterText}
-                />): null
+                {status === category.id ?
+                    (<>
+                        <div className="search-box">
+                            <Searchbar
+                            filterText={filterText}
+                            onFindtext={onFindtextSearch}
+                            />
+                        </div>
+                        <CategoryTreatment
+                            category_id={category.id}
+                            treatmentValue={filterText}
+                        />
+                        <img src="/med.jpg" alt="icon" onClick={() => {setStatus(0), onFindtextSearch("")}}/> 
+                    </>) : <img src="/doc.png" alt="icon" onClick={() => { setStatus(category.id), onFindtextSearch("")}}/> 
+
                 }
-            </li>
+                
+                
+            </div>
         )
     })
     
-    return <ul>{List}</ul>
+    return <div>{List}</div>
 }
 
 export default CategoryList;

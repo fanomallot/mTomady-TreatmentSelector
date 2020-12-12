@@ -1,6 +1,7 @@
 import React, {useState,useEffect, Fragment} from 'react';
 import axios from 'axios'
-import {Formik,Form,Field} from 'formik'
+import { Formik, Form, Field } from 'formik'
+import '../category.scss'
 
 const CategoryTreatment = ({category_id,treatmentValue}) => {
     const [treatments, setTreatments] = useState([])
@@ -17,9 +18,12 @@ const CategoryTreatment = ({category_id,treatmentValue}) => {
         if (treatment.attributes.name.toUpperCase().indexOf(treatmentValue.toUpperCase()) === -1) { 
             return
         }
-        return <div key={key} >
-            <Field name="treatment_id" type="radio" value={treatment.id }/>
-            <label htmlFor="treatment_id">{treatment.attributes.name}</label>
+        return <div key={key} className="formcheck2">
+            <label id="condition-check">
+                <Field name="treatment_id" type="radio" value={treatment.id } required hidden/>
+                {treatment.attributes.name}
+                <span className="checkmark"></span>
+            </label>
         </div>
     })
 

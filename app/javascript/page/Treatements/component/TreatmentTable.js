@@ -20,9 +20,12 @@ function TreatmentTable({filterText}){
         if (treatment.attributes.name.toUpperCase().indexOf(filterthis.toUpperCase()) === -1) {
             return
         }
-        row.push(<div key={treatment.id}>
-            <Field type="radio" name="treatment_id" value={treatment.id} required />
-            <label >{ treatment.attributes.name }</label>
+        row.push(<div key={treatment.id} className="form-check">
+            <label id="condition-check">
+                <Field type="radio" name="treatment_id" value={treatment.id} required hidden/>
+                {treatment.attributes.name}
+                <span className="checkmark"></span>
+            </label>
         </div>) 
     }) 
     return <div>{row}</div> 

@@ -6,11 +6,11 @@ const Login = () => {
     
     return <Formik
     initialValues={{
-        give_email: "",
+        give_name: "",
             give_pas: ""
         }}
         onSubmit={async (values) => {
-            axios.get(`/api/mtomady/admin/${values.give_email}`)
+            axios.get(`/api/mtomady/admin/log/${values.give_name}/${values.give_pas}`)
                 .then((resp) => { console.log(resp)  })
                 .catch((resp) => { console.log(resp) })   
         }}

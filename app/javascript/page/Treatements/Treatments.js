@@ -23,7 +23,7 @@ class Treatement extends Component{
     }
     render() {
         if (this.state.status == 0) {
-            return <div className="form-box flex-box">
+            return <div className="form-box flex-box flex-d-c">
                 <Formik
                     initialValues={{
                         give_name: ""
@@ -36,17 +36,17 @@ class Treatement extends Component{
                         values.give_name = ""
                     }}
                         >
-                    <Form className="form flex-box">
-                        <div>Veuillez saisir votre nom</div>
-                        <Field name="give_name" type="text" required/>
+                    <Form className="form ">
+                        <p>Type your name.</p>
+                        <Field name="give_name" type="text" required placeholder="Name"/>
                         <button type="submit">Submit</button>
                     </Form>
                 </Formik>
             </div>
         }
         if (this.state.status == 1) {
-            return <div>
-                Bienvenue {this.state.patient_name}
+            return <div className="next-form">
+                <div className="name">Welcome <span>{this.state.patient_name}</span> </div> 
                 
                 <Formik
                         initialValues={{
@@ -72,14 +72,19 @@ class Treatement extends Component{
                             >
                     <Form>
                         <Field name="patient" type="text" required hidden/>
-                        <Searchbar
+                        <div className="form-field">
+                            <label >Find Treatement</label>
+                            <Searchbar
                             filterText={this.state.filterText}
                             onFindtext={this.findtext}
-                        />
+                            />
+                        </div>
                         <TreatmentTable 
                             filterText={this.state.filterText}
                         />    
-                        <button type="submit">Submit</button>
+                        <div className="button">
+                            <button type="submit">Submit</button>
+                        </div>
                     </Form>
                 </Formik>
             </div>
