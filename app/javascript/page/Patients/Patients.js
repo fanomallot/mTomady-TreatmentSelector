@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Getlist from './components/Getlist';
-
+import './patient.scss'
 
 class Patients extends Component{
 
@@ -8,8 +8,8 @@ class Patients extends Component{
         super(props)
     }
     render() {
-        console.log(this.props);
-        return <div>vide
+        return <div>
+            <div className="Title">Patient list</div>
          <Getlist/>
         </div>
     }

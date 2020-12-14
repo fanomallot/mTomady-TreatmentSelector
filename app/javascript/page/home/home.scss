@@ -19,13 +19,14 @@
     p {
       font-size: 50px;
       color: $color_text;
+      margin: 50px 0;
     }
     a {
       margin: 0 20px;
       border: $border;
       padding: 10px 20px;
       color: $main_theme_color;
-      border-radius: $border;
+      border-radius: $border-radius;
       text-transform: uppercase;
       font-weight: 550;
       &:hover,

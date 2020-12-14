@@ -50,8 +50,9 @@ class Category extends Component{
             </div>
         }
 
-        return <div className="next-form">
-            <div className="name">Welcome <span>{this.state.patient_name}</span> </div>
+        return <div className="next-form p-8">
+            <div className="Title">Categories list </div>
+            
             <Formik
                 initialValues={{
                     patient: `${this.state.patient_name}`,
@@ -61,32 +62,39 @@ class Category extends Component{
                     axios.post('/treatment_patient_refs', values)
                         .then(resp => {
                             if (resp.status == 204) {
-                            alert('Donnez sauvegarder')
-                        }
+                                alert('Data save')
+                                history.push('/')
+                                window.location.reload()
+                            } else {
+                                alert('Error to save')
+                            }
                     })
                     .catch(resp =>{})
                     values.treatment_id = ""
                     values.patient = " "
-                    history.push('/')
-                    window.location.reload()
+                    
                 }}
                     >
                 <Form>
-                    <Field name="patient" type="text" required hidden />
-                    <div className="form-field">
-                        <label >Find Category</label>
-                        <Searchbar
-                        filterText={this.state.filterTextCategory}
-                        onFindtext={this.findtextCategory}
+                    <div className="list-box-o b-bottom">
+                        <Field name="patient" type="text" required hidden />
+                        <div className="form-field">
+                        <div className="name">Welcome <span>{this.state.patient_name}</span> </div>
+                            <Searchbar
+                            placeholder="Find category"
+                            filterText={this.state.filterTextCategory}
+                            onFindtext={this.findtextCategory}
+                            />
+                        </div>
+                    </div>
+                    <div className="list-box-o make-overflow">
+                        <CategoryList
+                        onFindtextSearch={this.findtextTreatment}
+                        filterText={this.state.filterTextTreatment}
+                        filterTextC={this.state.filterTextCategory}
                         />
                     </div>
-                    
-                    <CategoryList
-                    onFindtextSearch={this.findtextTreatment}
-                    filterText={this.state.filterTextTreatment}
-                    filterTextC={this.state.filterTextCategory}
-                    />
-                    <div className="button">
+                    <div className="button list-box-o b-top">
                         <button type="submit">Submit</button>
                     </div>
                 </Form>

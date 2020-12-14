@@ -22,7 +22,7 @@ function TreatmentTable({filterText}){
         }
         row.push(<div key={treatment.id} className="form-check">
             <label id="condition-check">
-                <Field type="radio" name="treatment_id" value={treatment.id} required hidden/>
+                <Field type="radio" name="treatment_id" value={treatment.id} required />
                 {treatment.attributes.name}
                 <span className="checkmark"></span>
             </label>

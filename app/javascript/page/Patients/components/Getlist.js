@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import GetRelation from './GetRelation';
 
 
@@ -13,16 +13,21 @@ const Getlist = () => {
             .catch((resp) => { console.log(resp) })
     }, [patients.length])
     const list = patients.map((patient, index) => {
-        return <div key={index}>
-            {patient.attributes.name}
-            {/* <GetRelation patient_id={patient.id}/> */}
-
-        </div>
+        return <tr key={index}>
+            <td> {patient.attributes.name}</td>
+            <td><GetRelation patient_id={patient.id}/></td> 
+        </tr>
     })
-
-
-    return <div>
-       {list}
-    </div>
+    return <table>
+        <thead>
+            <tr>
+                <td>Patient name</td>
+                <td>Treatment</td>
+            </tr>
+        </thead>
+        <tbody>
+            {list}
+        </tbody>
+    </table>
 }
 export default Getlist;

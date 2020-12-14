@@ -38,6 +38,7 @@ const CategoryList = ({filterText,filterTextC,onFindtextSearch}) => {
                     (<>
                         <div className="search-box">
                             <Searchbar
+                            placeholder="Find treatment"
                             filterText={filterText}
                             onFindtext={onFindtextSearch}
                             />

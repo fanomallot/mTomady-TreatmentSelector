@@ -37,27 +37,32 @@ class Treatement extends Component{
                     }}
                         >
                     <Form className="form ">
-                        <p>Type your name.</p>
+                        <p>Type your name</p>
                         <Field name="give_name" type="text" required placeholder="Name"/>
-                        <button type="submit">Submit</button>
+                        <button type="submit" className="button">Submit</button>
                     </Form>
                 </Formik>
             </div>
         }
         if (this.state.status == 1) {
-            return <div className="next-form">
-                <div className="name">Welcome <span>{this.state.patient_name}</span> </div> 
-                
+            return <div className="next-form p-8">
+                <div className="Title">Treatments list </div> 
                 <Formik
                         initialValues={{
                             patient: `${this.state.patient_name}`,
                             treatment_id: ""
                         }}
-                    onSubmit={async (values) => {  
+                    onSubmit={async (values) => {
+                        console.log(values)
                         axios.post('/treatment_patient_refs', values)
                             .then(resp => {
+                                console.log(resp.status)
                                 if (resp.status == 204) {
-                                    alert('Donnez sauvegarder')
+                                    alert('Data save')
+                                history.push('/')
+                                window.location.reload()
+                            } else {
+                                alert('Error to save')
                             }
                         })
                             .catch(resp => { })
@@ -66,23 +71,27 @@ class Treatement extends Component{
                         this.setState({
                             filterText: ''
                         })
-                        history.push('/')
-                        window.location.reload()
+                       
                         }}
                             >
                     <Form>
-                        <Field name="patient" type="text" required hidden/>
-                        <div className="form-field">
-                            <label >Find Treatement</label>
-                            <Searchbar
-                            filterText={this.state.filterText}
-                            onFindtext={this.findtext}
-                            />
+                        <div className="list-box-o b-bottom">
+                            <Field name="patient" type="text" required hidden/>
+                            <div className="form-field ">
+                            <div className="name">Welcome <span>{this.state.patient_name}</span></div>
+                                <Searchbar
+                                placeholder="Find treatment"
+                                filterText={this.state.filterText}
+                                onFindtext={this.findtext}
+                                />
+                            </div>
                         </div>
-                        <TreatmentTable 
-                            filterText={this.state.filterText}
-                        />    
-                        <div className="button">
+                        <div className="list-box-o make-overflow">
+                            <TreatmentTable 
+                                filterText={this.state.filterText}
+                            />    
+                        </div>
+                        <div className="button list-box-o b-top">
                             <button type="submit">Submit</button>
                         </div>
                     </Form>

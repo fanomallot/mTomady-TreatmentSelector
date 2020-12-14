@@ -9,7 +9,7 @@ class Searchbar extends Component {
     }
     render() {
         return <div>
-            <input type="text" value={this.props.filtertext} placeholder="Recherche" onChange={ this.makechangetext}/>
+            <input type="text" name="none" placeholder={this.props.placeholder} onChange={ this.makechangetext}/>
         </div>
     }
 }

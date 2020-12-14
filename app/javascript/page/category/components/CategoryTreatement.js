@@ -20,7 +20,7 @@ const CategoryTreatment = ({category_id,treatmentValue}) => {
         }
         return <div key={key} className="formcheck2">
             <label id="condition-check">
-                <Field name="treatment_id" type="radio" value={treatment.id } required hidden/>
+                <Field name="treatment_id" type="radio" value={treatment.id } required/>
                 {treatment.attributes.name}
                 <span className="checkmark"></span>
             </label>

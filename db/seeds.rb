@@ -20,3 +20,6 @@ categories = [Category.first,Category.last]
         Treatment.create(name: item , category: categories[i])
     end
 end
+
+Admin.create(name: 'fafa',password: '1010')
+Admin.create(name: 'admin',password: 'adminpas')

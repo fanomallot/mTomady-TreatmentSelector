@@ -13,7 +13,6 @@ function Navbar() {
             <Link className="mr-5 hover:text-gray-900" to={"/"}>Home</Link>
             <Link className="mr-5 hover:text-gray-900" to={"/treatments"}>Treatments</Link>
             <Link className="mr-5 hover:text-gray-900" to={"/categories"}>Categories</Link>
-            <Link className="mr-5 hover:text-gray-900" to={"/Admin-dashboard/patient-list"}>Patients List</Link>
         </nav>
         </div>
   </header>

@@ -1,3 +1,31 @@
+@import './config';
 .home-big-box {
+  display: flex;
+  .left-menu {
+    background: $bg_form;
+    text-align: center;
+    .link-menu {
+      position: relative;
+      width: 200px;
+      padding: 10px 0;
+      border-bottom: 1px solid #000;
+      margin: 10px;
+      background: $main_theme_color;
+      a {
+        img {
+          position: absolute;
+          left: 6px;
+          top: 4px;
+          width: 30px;
+          height: 30px;
+        }
+        padding: 10px 59px;
+      }
+    }
+  }
+}
+.home-page {
+  width: 100%;
   min-height: 70vh;
+  // padding: 25px;
 }

@@ -1,0 +1,42 @@
+@import '../../config';
+
+.category-create-box {
+  width: 70%;
+  margin: 0 auto;
+  .cat-create-form {
+    background: rgba(5, 5, 5, 0.623);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+  .form {
+    input {
+      width: 80%;
+    }
+    .field-title {
+      margin-bottom: 20px;
+    }
+  }
+  .annulation {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .flex-box-2 {
+    padding: 0 20px;
+    .delete {
+      cursor: pointer;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
