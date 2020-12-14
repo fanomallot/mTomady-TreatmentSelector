@@ -30,8 +30,10 @@ class Categorycreate extends Component{
         })
         Axios.delete(`/api/mtomady/category/${category_id}`)
             .then((resp) => {
-                if (resp.status === 204) {
+                if (resp.status == 200 || resp.status == 204) {
                     console.log('Data remove')
+                }else {
+                    alert("error on remove")
                 }
             })
             .catch((resp) => console.log(resp))
@@ -60,11 +62,13 @@ class Categorycreate extends Component{
                                         Axios.put(`/api/mtomady/category/${category.id}`, values)
                                             .then(resp => {
                                                 
-                                                if (resp.status == 200) {
-                                                    alert('Data save')
+                                                if (resp.status == 200 || resp.status == 204) {
                                                     this.setState({
-                                                        status: 0
+                                                        status: 0,
+                                                        category: [resp.data.data,...this.state.category.filter((i) => i.id !== category.id )]
                                                     })
+                                                } else {
+                                                    alert("error on save")
                                                 }
                                             })
                                         .catch(resp =>{})
@@ -108,12 +112,13 @@ class Categorycreate extends Component{
                 onSubmit={async (values) => {
                     Axios.post('/api/mtomady/category', values)
                         .then(resp => {
-                        if (resp.status == 200) {
-                            alert('Data save')
+                        if (resp.status == 200 || resp.status == 204) {
                             this.setState({
                                 statusbase: 0,
                                 category: [resp.data.data,...this.state.category]
                             })
+                        }else {
+                            alert("error on save")
                         }
                     })
                     .catch(resp =>{})

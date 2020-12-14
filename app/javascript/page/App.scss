@@ -7,16 +7,17 @@
     text-align: center;
     .link-menu {
       position: relative;
-      width: 200px;
+      width: 280px;
       padding: 10px 0;
       border-bottom: 1px solid #000;
       margin: 10px;
       background: $main_theme_color;
       a {
-        img {
+        img,
+        svg {
           position: absolute;
           left: 6px;
-          top: 4px;
+          top: 7px;
           width: 30px;
           height: 30px;
         }

@@ -1,0 +1,37 @@
+{
+  "title": "Willkommen zu react und react-i18next",
+  "navbar": {
+    "home": "Accueil",
+    "treatments": "Traitements",
+    "categories": "Catégorie des traitements"
+  },
+  "home": {
+    "title": "Bienvenue dans mTomady Treatment",
+    "button1":"Obtenir un traitement",
+    "button2":"Je suis un médecin"
+  },
+  "treatment": {
+    "head": "Tapez votre nom",
+    "plh_name": "Nom",
+    "plh_find": "Chercher un traitement",
+    "button": "Valider",
+    "title": "Liste des traitements",
+    "welcome": "Bienvenue",
+    "save": "Votre demande a été enregistrée",
+    "error": "Erreur d'enregistrement de la demande"
+  },
+  "category":{
+    "plh_find": "Chercher une catégorie",
+    "title": "Liste des catégories"
+  },
+  "login":{
+    "title": "Tapez le nom d'utilisateur / le mot de passe",
+    "plh_name": "Nom d'utilisateur",
+    "plh_pass": "Mot de passe",
+    "welcome": "Bienvenue Dr"
+  },
+  "left_menu":{
+    "patient": "Liste des patients",
+    "category": "Modification des données "
+  }
+}

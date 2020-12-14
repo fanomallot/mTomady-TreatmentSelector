@@ -37,7 +37,7 @@ $bg_form: #9ca3af;
   width: 35%;
   padding: 50px 10px;
   input {
-    width: 250px;
+    width: 85%;
     margin: 10px 0;
   }
 }
@@ -80,10 +80,6 @@ button {
   border-radius: $border-radius;
   text-transform: uppercase;
   font-weight: 550;
-  &.button {
-    margin-left: 30px;
-    margin-right: 0;
-  }
   &:hover,
   &:active {
     color: white;

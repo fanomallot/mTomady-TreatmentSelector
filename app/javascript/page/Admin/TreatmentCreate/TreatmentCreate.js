@@ -27,8 +27,10 @@ class TreatmentCreate extends Component{
         Axios.delete(`/api/mtomady/category/${this.props.match.params.category_id}/treatments/${treatment_id}`)
             .then((resp) => {
                 console.log(resp)
-                if (resp.status === 204) {
-                    alert('Data remove')
+                if (resp.status == 200 || resp.status == 204) {
+                    this.setState({
+                        treatments: this.state.treatments.filter((i) => i.id !== treatment_id )
+                    })
                 }
             })
             .catch((resp) => console.log(resp))
@@ -51,8 +53,16 @@ class TreatmentCreate extends Component{
                                 onSubmit={async (values) => {
                                     Axios.put(`/api/mtomady/category/${this.props.match.params.category_id}/treatments/${treatment.id}`, values)
                                         .then(resp => {
-                                            if (resp.status == 204) {
-                                            alert('Donnez sauvegarder')
+                                            if (resp.status == 200 || resp.status == 204) {
+                                                this.setState({
+                                                    status: 0,
+                                                    treatments: [resp.data.data,...this.state.treatments.filter((i) => i.id !== treatment.id )]
+                                                })
+                                            }else {
+                                                alert("Error on save")
+                                                this.setState({
+                                                    status: 0
+                                                })
                                             }
                                         })
                                     .catch(resp =>{})
@@ -96,8 +106,16 @@ class TreatmentCreate extends Component{
                 onSubmit={async (values) => {
                     Axios.post(`/api/mtomady/category/${this.props.match.params.category_id}/treatments`, values)
                         .then(resp => {
-                        if (resp.status == 204) {
-                        alert('Donnez sauvegarder')
+                        if (resp.status == 200 || resp.status == 204) {
+                            this.setState({
+                                statusbase: 0,
+                                treatments: [resp.data.data,...this.state.treatments]
+                            })
+                        }else {
+                            alert("Error on save")
+                            this.setState({
+                                statusbase: 0
+                            })
                         }
                     })
                     .catch(resp =>{})
@@ -116,11 +134,11 @@ class TreatmentCreate extends Component{
                 <label >Malagasy category's name</label>
                 <Field name="name_mg" type="text" placeholder="Example Name"/>
                 <button type="submit">Submit</button>
+                <p className="annulation" onClick={() => { this.setState({ statusbase: 0 }) }}>
+                    <FontAwesomeIcon icon={faTimes} />
+                </p>
                 </Form>
             </Formik>
-            <p className="annulation" onClick={() => { this.setState({ statusbase: 0 }) }}>
-                <img src="/med.jpg" alt="icon close"/>
-            </p>
             </div>
             )}
             {List}

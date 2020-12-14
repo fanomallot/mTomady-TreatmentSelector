@@ -1,15 +1,18 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import './home.scss';
-const Home = () => (
-    <div className="home-box">
+const Home = () => {
+    const { t, i18n } = useTranslation();
+    return <div className="home-box">
         <div className="content">
-            <p>Welcome to mTomady</p> 
+            <p>{t("home.title")}</p> 
             <div className="flex">
-                <Link to={"/treatments"}>Get Treatment</Link>
-                <Link to={"/secret-page-admin/login"}>I'm a Doctor</Link>
+                <Link to={"/treatments"}>{t("home.button1")}</Link>
+                <Link to={"/secret-page-admin/login"}>{t("home.button2")}</Link>
             </div>
         </div>
     </div>
-)
+}
+
 export default Home;

@@ -1,8 +1,25 @@
 import React, { Component, Fragment,useState,useEffect} from 'react';
 import axios from 'axios'
 import { Field } from 'formik';
-
-function TreatmentTable({filterText}){
+import { useTranslation } from 'react-i18next';
+function TreatmentTable({ filterText }) {
+    const { t, i18n } = useTranslation();
+    function check_language(item) {
+        if (i18n.language == "fr") {
+            if (item.name_fr == "" || item.name_fr == null || item.name_fr == " ") {
+                return item.name
+            }
+            return item.name_fr
+        } else if (i18n.language == "mg") {
+            if (item.name_mg == "" || item.name_mg == null || item.name_mg == " ") {
+                return item.name
+            }
+            return item.name_mg
+        } else {
+            return item.name
+        }
+        
+    }
     const [treatments, setTreatments] = useState([])
     let filterthis = filterText
     const row = []
@@ -23,7 +40,7 @@ function TreatmentTable({filterText}){
         row.push(<div key={treatment.id} className="form-check">
             <label id="condition-check">
                 <Field type="radio" name="treatment_id" value={treatment.id} required />
-                {treatment.attributes.name}
+                {check_language(treatment.attributes)}
                 <span className="checkmark"></span>
             </label>
         </div>) 

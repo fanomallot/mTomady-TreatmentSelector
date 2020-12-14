@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Login from './Admin/Login';
 import Category from './category/category';
@@ -11,10 +11,17 @@ import Patients from './Patients/Patients';
 import Categorycreate from './Admin/Categorycreate/Categorycreate';
 import TreatmentCreate from './Admin/TreatmentCreate/TreatmentCreate';
 import LeftMenu from './Admin/LeftMenu';
+import { Trans, useTranslation } from 'react-i18next';
 const App = (props) => {
-  
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (language) => {
+      i18n.changeLanguage(language);
+  };
   return <>
     <Navbar />
+    <button onClick={() => changeLanguage("en")}>EN</button>
+    <button onClick={() => changeLanguage("mg")}>mg</button>
+    <button onClick={() => changeLanguage("fr")}>fr</button>
     <div className="home-big-box">
       {props.location.pathname.indexOf("/Admin-dashboard") !== -1 ? (<div className="left-menu">
         <LeftMenu /> 

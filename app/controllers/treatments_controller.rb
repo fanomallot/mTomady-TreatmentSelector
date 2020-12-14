@@ -10,7 +10,7 @@ class TreatmentsController < ApplicationController
   end
   def index
     category = Category.find(params[:category_id])
-    treatments = category.treatments
+    treatments = category.treatments.order("created_at DESC")
     render json: TreatmentSerializer.new(treatments).serialized_json
   end
 

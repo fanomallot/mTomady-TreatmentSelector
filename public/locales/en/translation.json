@@ -1,0 +1,42 @@
+{
+  "title": "Welcome to react using react-i18next",
+  "navbar": {
+    "home": "Home",
+    "treatments": "Treatments",
+    "categories": "Category of treatments"
+  },
+  "home": {
+    "title": "Welcome to mTomady Treatment",
+    "button1":"Get Treatment",
+    "button2":"I'm a Doctor"
+  },
+  "treatment": {
+    "head": "Type your name",
+    "plh_name": "Name",
+    "plh_find": "Find treatment",
+    "button": "Submit",
+    "title": "Treatments list",
+    "welcome": "Welcome",
+    "save": "your request has been saved",
+    "error": "Error to save request"
+  },
+  "category":{
+    "plh_find": "Find a category of treatments",
+    "title": "Categories list"
+  },
+  "login":{
+    "title": "Type username/password",
+    "plh_name": "Username",
+    "plh_pass": "Password",
+    "welcome": "Welcome Dr"
+  },
+  "left_menu":{
+    "patient": "Patients list",
+    "category": "Data modification"
+  },
+  "patient":{
+    "title":"Patient list",
+    "name": "Patient name",
+    "name": "Treatment"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Willkommen zu react und react-i18next",
+  "navbar": {
+    "home": "Fandraisana",
+    "treatments": "Fitsaboana",
+    "categories": "Sokajim-pitsaboana"
+  },
+  "home": {
+    "title": "Tongasoa eto amin'ny mTomady Treatment",
+    "button1":"Hitsabo tena",
+    "button2":"Dokotera aho"
+  },
+  "treatment": {
+    "head": "Soraty ny anaranao",
+    "plh_name": "Anarana",
+    "plh_find": "Hikaroka fitsaboana",
+    "button": "Hanamafy",
+    "title": "Lisitry ny fitsaboana",
+    "welcome": "Tonga soa",
+    "save": "Voatahiry ny fangatahanao",
+    "error": "Tsy voatahiry ny fangatahanao fa misy olana"
+  },
+  "category":{
+    "plh_find": "Hikaroka Sokajim-pitsaboana",
+    "title": "Lisitra ireo sokajim-pitsaboana"
+  },
+  "login":{
+    "title": "Soraty ny anarana / ny teny miafina",
+    "plh_name": "Ny anarana",
+    "plh_pass": "Ny teny miafina",
+    "welcome": "Tonga soa Dr"
+  },
+  "left_menu":{
+    "patient": "Lisitry ny marary",
+    "category": "Fanovana data"
+  }
+}
