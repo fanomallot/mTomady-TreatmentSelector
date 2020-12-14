@@ -1,7 +1,7 @@
 class PatientsController < ApplicationController
   protect_from_forgery with: :null_session
   def index
-    patients = Patient.all
+    patients = Patient.order("created_at DESC")
     render json: PatientSerializer.new(patients).serialized_json
   end
   def show

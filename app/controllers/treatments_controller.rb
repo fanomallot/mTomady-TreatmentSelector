@@ -1,7 +1,7 @@
 class TreatmentsController < ApplicationController
   protect_from_forgery with: :null_session
   def fullindex
-    treatments = Treatment.all
+    treatments = Treatment.order("created_at DESC")
     render json: TreatmentSerializer.new(treatments).serialized_json
   end
   def show

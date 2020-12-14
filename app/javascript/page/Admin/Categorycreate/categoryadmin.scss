@@ -12,31 +12,52 @@
     height: 100vh;
   }
   .form {
+    position: relative;
     input {
       width: 80%;
     }
     .field-title {
       margin-bottom: 20px;
     }
-  }
-  .annulation {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    cursor: pointer;
-    img {
-      width: 30px;
-      height: 30px;
+    .annulation {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      cursor: pointer;
+      img,
+      svg {
+        width: 25px;
+        height: 25px;
+      }
     }
   }
   .flex-box-2 {
     padding: 0 20px;
     .delete {
       cursor: pointer;
-      img {
+      color: $main_theme_color;
+      &:hover,
+      &:active {
+        color: $bg_form;
+      }
+      img,
+      svg {
         width: 30px;
         height: 30px;
       }
+    }
+  }
+  .link-see {
+    color: $main_theme_color;
+    &:hover,
+    &:active {
+      color: $bg_form;
+    }
+    img,
+    svg {
+      width: 40px;
+      height: 40px;
     }
   }
 }

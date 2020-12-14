@@ -3,8 +3,8 @@ import axios from 'axios'
 import CategoryTreatment from './CategoryTreatement';
 import Searchbar from '../../Treatements/component/Searchbar';
 import '../category.scss';
-import { func } from 'prop-types';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
 const CategoryList = ({filterText,filterTextC,onFindtextSearch}) => {
     const [categories, setCategories] = useState([])
@@ -47,8 +47,8 @@ const CategoryList = ({filterText,filterTextC,onFindtextSearch}) => {
                             category_id={category.id}
                             treatmentValue={filterText}
                         />
-                        <img src="/med.jpg" alt="icon" onClick={() => {setStatus(0), onFindtextSearch("")}}/> 
-                    </>) : <img src="/doc.png" alt="icon" onClick={() => { setStatus(category.id), onFindtextSearch("")}}/> 
+                        <FontAwesomeIcon icon={faArrowUp} onClick={() => { setStatus(0), onFindtextSearch("")}} />  
+                    </>) : <FontAwesomeIcon icon={faArrowDown} onClick={() => { setStatus(category.id), onFindtextSearch("")}} />
 
                 }
                 

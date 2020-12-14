@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   protect_from_forgery with: :null_session
   def index
-    categories = Category.all
+    categories = Category.order("created_at DESC")
     render json: CategorySerializer.new(categories).serialized_json
   end
 

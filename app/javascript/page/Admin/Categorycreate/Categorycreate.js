@@ -1,3 +1,5 @@
+import { faEye, faTimes, faTrash} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Axios from 'axios';
 import { Field, Form, Formik } from 'formik';
 import React, { Component } from 'react';
@@ -23,10 +25,13 @@ class Categorycreate extends Component{
             .catch((resp) => console.log(resp))
     }
     removeCategory(category_id) {
+        this.setState({
+            category: this.state.category.filter((i) => i.id !== category_id )
+        })
         Axios.delete(`/api/mtomady/category/${category_id}`)
             .then((resp) => {
                 if (resp.status === 204) {
-                    alert('Data remove')
+                    console.log('Data remove')
                 }
             })
             .catch((resp) => console.log(resp))
@@ -37,10 +42,12 @@ class Categorycreate extends Component{
                 <div key={key} >
                     <hr />
                     <div className="flex-box-2">
-                        <Link to={`/Admin-dashboard/${category.attributes.name}/${category.id}/treatments`}>
-                            {category.attributes.name}
-                        </Link>
+                        {category.attributes.name}
+                        
                         <div className="link-right flex-box">
+                        <Link className="link-see" to={`/Admin-dashboard/${category.attributes.name}/${category.id}/treatments`} title="see">
+                            <FontAwesomeIcon icon={faEye} />
+                        </Link>
                             {this.state.status === category.id ? (
                                 <div className="cat-create-form flex-box flex-d-c">
                                     <Formik
@@ -52,9 +59,12 @@ class Categorycreate extends Component{
                                     onSubmit={async (values) => {
                                         Axios.put(`/api/mtomady/category/${category.id}`, values)
                                             .then(resp => {
+                                                
                                                 if (resp.status == 200) {
                                                     alert('Data save')
-                                                    this.setState({status: 0})
+                                                    this.setState({
+                                                        status: 0
+                                                    })
                                                 }
                                             })
                                         .catch(resp =>{})
@@ -72,21 +82,22 @@ class Categorycreate extends Component{
                                         <label >Malagasy category's name</label>
                                         <Field name="name_mg" type="text" required/>
                                         <button type="submit">Submit</button>
+                                    <p className="annulation" onClick={() => { this.setState({ status: 0 }) }}>
+                                        <FontAwesomeIcon icon={faTimes} />
+                                    </p>
                                     </Form>
                                     </Formik>
-                                    <p className="annulation" onClick={() => { this.setState({ status: 0 }) }}>
-                                        <img src="/med.jpg" alt="icon close"/>
-                                    </p>
                                 </div>
                             ) : (<button onClick={() => { this.setState({ status: category.id }) }} >Edit</button>)    
                             }
-                            <p className="delete" onClick={() => { this.removeCategory(category.id)}} ><img src="/med.jpg" alt="icon trash"/></p>
+                            <p className="delete" onClick={() => { if(window.confirm('Delete the item?')){this.removeCategory(category.id)} }} title="delete"><FontAwesomeIcon icon={faTrash} /> </p>
+                            
                         </div>
                     </div>
                 </div>
             )
         })
-        return <div className="category-create-box">
+        return <div className="category-create-box p-8">
             <div className="Title">Category list</div>
             {this.state.statusbase === 0 ? (<button onClick={() => { this.setState({ statusbase: 1 }) }}>Create a new category</button>) : (<div className="cat-create-form flex-box flex-d-c"><Formik
                 initialValues={{
@@ -97,11 +108,11 @@ class Categorycreate extends Component{
                 onSubmit={async (values) => {
                     Axios.post('/api/mtomady/category', values)
                         .then(resp => {
-                        console.log(resp.data.data)
                         if (resp.status == 200) {
                             alert('Data save')
                             this.setState({
-                                statusbase: 0
+                                statusbase: 0,
+                                category: [resp.data.data,...this.state.category]
                             })
                         }
                     })
@@ -120,11 +131,11 @@ class Categorycreate extends Component{
                     <label >Malagasy category's name</label>
                     <Field name="name_mg" type="text" placeholder="Example Name"/>
                     <button type="submit">Submit</button>
+                <p className="annulation" onClick={() => { this.setState({ statusbase: 0 }) }}>
+                    <FontAwesomeIcon icon={faTimes} />
+                </p>
                 </Form>
             </Formik>
-                <p className="annulation" onClick={() => { this.setState({ statusbase: 0 }) }}>
-                    <img src="/med.jpg" alt="icon close"/>
-                </p>
             </div>
             )}
             {List}

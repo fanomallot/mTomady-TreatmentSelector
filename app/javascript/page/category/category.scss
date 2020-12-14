@@ -37,13 +37,18 @@
       width: 80%;
     }
   }
-  img {
+  img,
+  svg {
     position: absolute;
     cursor: pointer;
     z-index: 100;
+    color: white;
     right: 10px;
     top: 10px;
     width: 30px;
     height: 30px;
+  }
+  .svg-inline--fa.fa-w-14 {
+    width: 1.85rem;
   }
 }
