@@ -19,9 +19,11 @@ const App = (props) => {
   };
   return <>
     <Navbar />
-    <button onClick={() => changeLanguage("en")}>EN</button>
-    <button onClick={() => changeLanguage("mg")}>mg</button>
-    <button onClick={() => changeLanguage("fr")}>fr</button>
+    <div className="language-box">
+      <div onClick={() => changeLanguage("en")}>EN</div>
+      <div onClick={() => changeLanguage("mg")}>mg</div>
+      <div onClick={() => changeLanguage("fr")}>fr</div>
+    </div>
     <div className="home-big-box">
       {props.location.pathname.indexOf("/Admin-dashboard") !== -1 ? (<div className="left-menu">
         <LeftMenu /> 

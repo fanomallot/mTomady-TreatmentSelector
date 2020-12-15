@@ -1,4 +1,10 @@
 @import './config';
+
+.language-box {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
 .home-big-box {
   display: flex;
   .left-menu {

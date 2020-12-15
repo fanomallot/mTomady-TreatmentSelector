@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React, { useState, useEffect, Fragment } from 'react';
+import { useTranslation } from 'react-i18next';
 import GetRelation from './GetRelation';
 
 
 const Getlist = () => {
     const [patients, setPatients] = useState([])
+    const [t, i18n] = useTranslation()
     useEffect(() => {
         axios.get('/api/mtomady/patient')
             .then((resp) => {
@@ -21,8 +23,8 @@ const Getlist = () => {
     return <table>
         <thead>
             <tr>
-                <td>Patient name</td>
-                <td>Treatment</td>
+                <td>{t("patient.name")}</td>
+                <td>{t("patient.treatment")}</td>
             </tr>
         </thead>
         <tbody>

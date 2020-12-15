@@ -53,6 +53,8 @@ input {
 }
 .flex-none {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .flex-box {
   flex-wrap: wrap;

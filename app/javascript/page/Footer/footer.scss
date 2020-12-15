@@ -1,0 +1,15 @@
+@import '../config';
+
+.footer {
+  margin-top: 20px;
+  padding: 15px 30px;
+  .right {
+    .span {
+      margin: 0 5px;
+    }
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

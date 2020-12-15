@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
 import Getlist from './components/Getlist';
 import './patient.scss'
 
@@ -8,11 +9,12 @@ class Patients extends Component{
         super(props)
     }
     render() {
-        return <div>
-            <div className="Title">Patient list</div>
+        const { t } = this.props;
+        return <div className="patient-box">
+            <div className="Title">{t("patient.title")}</div>
          <Getlist/>
         </div>
     }
 
 }
-export default Patients;
+export default withTranslation()(Patients);

@@ -3,8 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Axios from 'axios';
 import { Field, Form, Formik } from 'formik';
 import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import './categoryadmin.scss'
+import './categoryadmin.scss';
+import i18n from '../../i18n'
 
 
 class Categorycreate extends Component{
@@ -38,13 +40,30 @@ class Categorycreate extends Component{
             })
             .catch((resp) => console.log(resp))
     }
+    check_language(item) {
+        if (i18n.language == "fr") {
+            if (item.name_fr == "" || item.name_fr == null || item.name_fr == " ") {
+                return item.name
+            }
+            return item.name_fr
+        } else if (i18n.language == "mg") {
+            if (item.name_mg == "" || item.name_mg == null || item.name_mg == " ") {
+                return item.name
+            }
+            return item.name_mg
+        } else {
+            return item.name
+        }
+        
+    }
     render() {
+        const {t} = this.props
         const List = this.state.category.map((category, key) => {
             return (
                 <div key={key} >
                     <hr />
                     <div className="flex-box-2">
-                        {category.attributes.name}
+                        {this.check_language(category.attributes)}
                         
                         <div className="link-right flex-box">
                         <Link className="link-see" to={`/Admin-dashboard/${category.attributes.name}/${category.id}/treatments`} title="see">
@@ -63,12 +82,13 @@ class Categorycreate extends Component{
                                             .then(resp => {
                                                 
                                                 if (resp.status == 200 || resp.status == 204) {
+                                                    alert(`${t("treatment.save")}`)
                                                     this.setState({
                                                         status: 0,
                                                         category: [resp.data.data,...this.state.category.filter((i) => i.id !== category.id )]
                                                     })
                                                 } else {
-                                                    alert("error on save")
+                                                    alert(`${t("treatment.error")}`)
                                                 }
                                             })
                                         .catch(resp =>{})
@@ -78,23 +98,23 @@ class Categorycreate extends Component{
                                     }}
                                         >
                                     <Form className="form flex-box flex-d-c">
-                                        <div className="Title field-title">Edit category</div>
-                                        <label >English category's name</label>
+                                        <div className="Title field-title">{t("category.edit_title")}</div>
+                                        <label >{t("category.version_en")}</label>
                                         <Field name="name" type="text" required/>
-                                        <label >French category's name</label>
+                                        <label >{t("category.version_fr")}</label>
                                         <Field name="name_fr" type="text" required/>
-                                        <label >Malagasy category's name</label>
+                                        <label >{t("category.version_mg")}</label>
                                         <Field name="name_mg" type="text" required/>
-                                        <button type="submit">Submit</button>
+                                        <button type="submit">{t("treatment.button")}</button>
                                     <p className="annulation" onClick={() => { this.setState({ status: 0 }) }}>
                                         <FontAwesomeIcon icon={faTimes} />
                                     </p>
                                     </Form>
                                     </Formik>
                                 </div>
-                            ) : (<button onClick={() => { this.setState({ status: category.id }) }} >Edit</button>)    
+                            ) : (<button onClick={() => { this.setState({ status: category.id }) }} >{t("category.edit")}</button>)    
                             }
-                            <p className="delete" onClick={() => { if(window.confirm('Delete the item?')){this.removeCategory(category.id)} }} title="delete"><FontAwesomeIcon icon={faTrash} /> </p>
+                            <p className="delete" onClick={() => { if(window.confirm(`${t("treatment.delete")}`)){this.removeCategory(category.id)} }} title="delete"><FontAwesomeIcon icon={faTrash} /> </p>
                             
                         </div>
                     </div>
@@ -102,8 +122,8 @@ class Categorycreate extends Component{
             )
         })
         return <div className="category-create-box p-8">
-            <div className="Title">Category list</div>
-            {this.state.statusbase === 0 ? (<button onClick={() => { this.setState({ statusbase: 1 }) }}>Create a new category</button>) : (<div className="cat-create-form flex-box flex-d-c"><Formik
+            <div className="Title">{t("category.title")}</div>
+            {this.state.statusbase === 0 ? (<button onClick={() => { this.setState({ statusbase: 1 }) }}>{t("category.create")}</button>) : (<div className="cat-create-form flex-box flex-d-c"><Formik
                 initialValues={{
                     name: "",
                     name_fr: "",
@@ -112,13 +132,14 @@ class Categorycreate extends Component{
                 onSubmit={async (values) => {
                     Axios.post('/api/mtomady/category', values)
                         .then(resp => {
-                        if (resp.status == 200 || resp.status == 204) {
+                            if (resp.status == 200 || resp.status == 204) {
+                            alert(`${t("treatment.save")}`)
                             this.setState({
                                 statusbase: 0,
                                 category: [resp.data.data,...this.state.category]
                             })
                         }else {
-                            alert("error on save")
+                            alert(`${t("treatment.error")}`)
                         }
                     })
                     .catch(resp =>{})
@@ -128,14 +149,14 @@ class Categorycreate extends Component{
                 }}
                     >
                 <Form className="form flex-box flex-d-c">
-                    <div className="Title field-title">Type new category's name </div>
-                    <label >English category's name</label>
-                    <Field name="name" type="text" required placeholder="Example Name"/>
-                    <label >French category's name</label>
-                    <Field name="name_fr" type="text" placeholder="Example Name"/>
-                    <label >Malagasy category's name</label>
-                    <Field name="name_mg" type="text" placeholder="Example Name"/>
-                    <button type="submit">Submit</button>
+                    <div className="Title field-title">{t("category.create_title")} </div>
+                    <label >{t("category.version_en")}</label>
+                    <Field name="name" type="text" required placeholder={t("treatment.plh_namex")}/>
+                    <label >{t("category.version_fr")}</label>
+                    <Field name="name_fr" type="text" placeholder={t("treatment.plh_namex")}/>
+                    <label >{t("category.version_mg")}</label>
+                    <Field name="name_mg" type="text" placeholder={t("treatment.plh_namex")}/>
+                    <button type="submit">{t("treatment.button")}</button>
                 <p className="annulation" onClick={() => { this.setState({ statusbase: 0 }) }}>
                     <FontAwesomeIcon icon={faTimes} />
                 </p>
@@ -149,4 +170,4 @@ class Categorycreate extends Component{
     }
 
 }
-export default Categorycreate;
+export default withTranslation()(Categorycreate);

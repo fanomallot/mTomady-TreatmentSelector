@@ -35,6 +35,7 @@ class TreatmentsController < ApplicationController
 
   def destroy
     treatment = Treatment.find(params[:id])
+    treatment.treatment_patient_refs.destroy_all
     unless treatment.nil?   
       if treatment.destroy
         head :no_content

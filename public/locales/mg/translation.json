@@ -1,5 +1,4 @@
 {
-  "title": "Willkommen zu react und react-i18next",
   "navbar": {
     "home": "Fandraisana",
     "treatments": "Fitsaboana",
@@ -13,16 +12,28 @@
   "treatment": {
     "head": "Soraty ny anaranao",
     "plh_name": "Anarana",
+    "plh_namex": "Anarana ohatra",
     "plh_find": "Hikaroka fitsaboana",
     "button": "Hanamafy",
     "title": "Lisitry ny fitsaboana",
+    "delete": "Tena ho fafana ve ?",
+    "create": "Mamorona fitsaboana vaovao",
+    "create_title": "Soraty ny anaran'ny fitsaboana vaovao",
+    "edit_title": "Hanova ny fitsaboana",
     "welcome": "Tonga soa",
     "save": "Voatahiry ny fangatahanao",
     "error": "Tsy voatahiry ny fangatahanao fa misy olana"
   },
   "category":{
     "plh_find": "Hikaroka Sokajim-pitsaboana",
-    "title": "Lisitra ireo sokajim-pitsaboana"
+    "title": "Lisitra ireo sokajim-pitsaboana",
+    "create": "Mamorona sokajy vaovao",
+    "create_title": "Soraty ny anaran'ny sokajy vaovao",
+    "edit": "Havaozina",
+    "edit_title": "Hanova ny sokajy",
+    "version_en": "Dikan-teny anglisy",
+    "version_fr": "Dikan-teny frantsay",
+    "version_mg": "Dikan-teny malagasy"
   },
   "login":{
     "title": "Soraty ny anarana / ny teny miafina",
@@ -33,5 +44,10 @@
   "left_menu":{
     "patient": "Lisitry ny marary",
     "category": "Fanovana data"
+  },
+  "patient":{
+    "title":"Lisitry ny marary",
+    "name": "Anaran'ny marary",
+    "treatment": "Fitsaboana"
   }
 }

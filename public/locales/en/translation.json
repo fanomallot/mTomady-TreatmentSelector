@@ -1,5 +1,4 @@
 {
-  "title": "Welcome to react using react-i18next",
   "navbar": {
     "home": "Home",
     "treatments": "Treatments",
@@ -13,16 +12,28 @@
   "treatment": {
     "head": "Type your name",
     "plh_name": "Name",
+    "plh_namex": "Example Name",
     "plh_find": "Find treatment",
     "button": "Submit",
     "title": "Treatments list",
+    "create": "Create a new treatment",
+    "delete": "Are you sure ?",
+    "create_title": "Type new treatment's name",
+    "edit_title": "Edit treatment",
     "welcome": "Welcome",
     "save": "your request has been saved",
     "error": "Error to save request"
   },
   "category":{
     "plh_find": "Find a category of treatments",
-    "title": "Categories list"
+    "title": "Categories list",
+    "create": "Create a new category",
+    "create_title": "Type new category's name",
+    "edit": "Edit",
+    "edit_title": "Edit category",
+    "version_en": "English version",
+    "version_fr": "French version",
+    "version_mg": "Malagasy version"
   },
   "login":{
     "title": "Type username/password",
@@ -37,6 +48,6 @@
   "patient":{
     "title":"Patient list",
     "name": "Patient name",
-    "name": "Treatment"
+    "treatment": "Treatment"
   }
 }
