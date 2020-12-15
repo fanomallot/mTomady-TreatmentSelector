@@ -10,7 +10,7 @@ Une application permettant à un patient qui arrive dans une clinique de sélect
 
 `Versioning` Github
 
-`Front-end' Reactjs (react-rails webpack)
+`Front-end` Reactjs (react-rails webpack)
 
 - Documentation installation
 
