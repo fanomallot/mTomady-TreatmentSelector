@@ -34,7 +34,7 @@ $bg_form: #9ca3af;
   box-shadow: $box-shadow;
   border-radius: $border-radius;
   background: $bg_form;
-  width: 35%;
+
   padding: 50px 10px;
   input {
     width: 85%;
@@ -90,7 +90,6 @@ button {
 }
 .list-box-o {
   background: $bg_form;
-  width: 90%;
   margin: 0 auto;
   padding: 5px;
   &.b-bottom {
@@ -163,5 +162,23 @@ button {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+  }
+}
+
+// mobile
+@media screen and (max-width: 500px) {
+  .form {
+    width: 80%;
+  }
+  .list-box-o {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 500px) {
+  .form {
+    width: 35%;
+  }
+  .list-box-o {
+    width: 90%;
   }
 }
