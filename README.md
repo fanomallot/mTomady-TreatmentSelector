@@ -10,15 +10,20 @@ Une application permettant à un patient qui arrive dans une clinique de sélect
 
 `Versioning` Github
 
+`Front-end` Reactjs (react-rails webpack)
+
 - Documentation installation
+
   https://gorails.com/
 
 - Documentation installation
+
   https://medium.com/@zayneabraham/how-to-create-a-react-app-with-ruby-on-rails-548366a90185
 
 * Etape de lancement
   Lancer le terminal
   Entrer les codes suivants :
+  
   git clone https://github.com/fanomallot/mTomady-TreatmentSelector.git
 
           cd mTomady-TreatmentSelector
@@ -32,5 +37,7 @@ Une application permettant à un patient qui arrive dans une clinique de sélect
           rails s
 
   Admin login :
-  email : admin@admin.admin
-  password : admin@admin.admin
+  
+      email : admin@admin.admin
+
+      password : admin@admin.admin
