@@ -27,7 +27,6 @@ class Login extends React.Component{
             }}
             validationSchema={LoginSchema}
               onSubmit={(values) => {
-                console.log(values)
               this.props.userLoginAttempt(values);
             }}
         >

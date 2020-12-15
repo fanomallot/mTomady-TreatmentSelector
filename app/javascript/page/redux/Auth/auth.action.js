@@ -39,7 +39,7 @@ export const userLoginAttempt = ({ email, password }) => {
             email: email,
             password: password
         }).then(response => {
-            console.log(response.data)
+            // console.log(response.data)
             if (response.data.error === "Mot de passe ou email incorrect" || response.data.error ==="Invalid username or password" ) {
                 
                 

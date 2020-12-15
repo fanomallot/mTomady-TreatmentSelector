@@ -138,7 +138,6 @@ class TreatmentCreate extends Component{
                         }
                     })
                     .catch(resp =>{})
-                    console.log(values)
                     values.name = ""
                     values.name_fr = ""
                     values.name_mg = ""

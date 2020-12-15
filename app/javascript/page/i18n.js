@@ -19,7 +19,7 @@ if (language === null) {
 
 i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
   fallbackLng: language,
-  debug: true,
+  debug: false,
   detection: {
     order: ['queryString', 'cookie'],
     cache: ['cookie']

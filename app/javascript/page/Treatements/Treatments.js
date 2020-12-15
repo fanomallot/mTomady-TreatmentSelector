@@ -55,10 +55,8 @@ class Treatement extends Component{
                             treatment_id: ""
                         }}
                     onSubmit={async (values) => {
-                        console.log(values)
                         Axios.post('/treatment_patient_refs', values)
                             .then(resp => {
-                                console.log(resp.status)
                                 if (resp.status == 200 || resp.status == 204) {
                                     alert(`${t('treatment.save')}`)
                                 history.push('/')
