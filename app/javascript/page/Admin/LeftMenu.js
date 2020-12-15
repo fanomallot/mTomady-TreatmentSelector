@@ -9,15 +9,15 @@ const LeftMenu = () => {
     const [t, i18n] = useTranslation()
     return <>
         <div className="link-menu">
-            <Link to={"/Admin-dashboard/patient-list"}>
+            <Link to={"/Admin-dashboard/patient-list"} title={t("left_menu.patient")}>
                 <FontAwesomeIcon icon={faUsers} />  
-                {t("left_menu.patient")}
+               <a>{t("left_menu.patient")}</a> 
             </Link>
         </div>
         <div className="link-menu">
-            <Link to={"/Admin-dashboard/category"}>
+            <Link to={"/Admin-dashboard/category"} title={t("left_menu.category")}>
             <FontAwesomeIcon icon={faColumns} />  
-            {t("left_menu.category")}
+            <a>{t("left_menu.category")}</a> 
             </Link>
         </div>
     </>

@@ -173,6 +173,25 @@ button {
   .list-box-o {
     width: 100%;
   }
+  .home-big-box {
+    position: relative;
+    .left-menu {
+      position: absolute;
+      display: flex;
+      top: -35px;
+      .link-menu {
+        width: 43px;
+        a {
+          width: 40px;
+          a {
+            display: none;
+            width: 0;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
 }
 @media screen and (min-width: 500px) {
   .form {
@@ -180,5 +199,22 @@ button {
   }
   .list-box-o {
     width: 90%;
+  }
+  .home-big-box {
+    position: relative;
+    .left-menu {
+      position: relative;
+      display: block;
+      .link-menu {
+        width: 280px;
+        a {
+          width: auto;
+          a {
+            display: inline;
+            width: auto;
+          }
+        }
+      }
+    }
   }
 }

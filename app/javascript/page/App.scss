@@ -60,12 +60,13 @@
     text-align: center;
     .link-menu {
       position: relative;
-      width: 280px;
+      // width: 280px;
       padding: 10px 0;
       border-bottom: 1px solid #000;
       margin: 10px;
       background: $main_theme_color;
       a {
+        background: #000;
         img,
         svg {
           position: absolute;
@@ -74,7 +75,10 @@
           width: 30px;
           height: 30px;
         }
-        padding: 10px 59px;
+        padding: 10px 61px;
+        a {
+          padding: 0;
+        }
       }
     }
   }
