@@ -1,6 +1,7 @@
 class TprsController < ApplicationController
   protect_from_forgery with: :null_session
-
+  before_action :authorized, only: [:auto_login]
+  
   def index
     patient = Patient.find(params[:patient_id])
     treatment = patient.treatments

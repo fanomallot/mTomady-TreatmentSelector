@@ -36,10 +36,12 @@
     "version_mg": "version malgache"
   },
   "login":{
-    "title": "Tapez le nom d'utilisateur / le mot de passe",
-    "plh_name": "Nom d'utilisateur",
+    "title": "Tapez votre email / mot de passe",
+    "plh_name": "exemple@exemple.exemple",
     "plh_pass": "Mot de passe",
-    "welcome": "Bienvenue Dr"
+    "welcome": "Bienvenue Dr",
+    "message1": "Le champ ne doit pas être vide",
+    "message2":"Email ou mot de passe incorrect"
   },
   "left_menu":{
     "patient": "Liste des patients",

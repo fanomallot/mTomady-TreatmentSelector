@@ -36,10 +36,12 @@
     "version_mg": "Dikan-teny malagasy"
   },
   "login":{
-    "title": "Soraty ny anarana / ny teny miafina",
-    "plh_name": "Ny anarana",
+    "title": "Soraty ny mailaka / ny teny miafina",
+    "plh_name": "ohatra@ohatra.ohatra",
     "plh_pass": "Ny teny miafina",
-    "welcome": "Tonga soa Dr"
+    "welcome": "Tonga soa Dr",
+    "message1": "Tsy tokony foana ny saha",
+    "message2":"Mailaka na teny miafina tsy mety"
   },
   "left_menu":{
     "patient": "Lisitry ny marary",

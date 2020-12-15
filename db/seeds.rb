@@ -21,5 +21,5 @@ categories = [Category.first,Category.last]
     end
 end
 
-Admin.create(name: 'fafa',password: '1010')
-Admin.create(name: 'admin',password: 'adminpas')
+Admin.create(email: "fafa@fa.fa", password: "1010")
+Admin.create(email: 'admin@admin.admin',password: 'admin@admin.admin')

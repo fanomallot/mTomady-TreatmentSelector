@@ -7,12 +7,16 @@ import ReactDOM from 'react-dom'
 import App from '../page/App'
 import { BrowserRouter, Route } from 'react-router-dom'
 import '../page/i18n'
+import { Provider } from 'react-redux'
+import store from '../page/store'
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <BrowserRouter >
-      <Suspense fallback={<div>Loading...</div>}>
-        <Route path='/' component={App}/>
-      </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+      <Provider store={store} >
+          <Route path='/' component={App}/>
+      </Provider>
+        </Suspense>
     </BrowserRouter>,
     document.body.appendChild(document.createElement('div')),
   )

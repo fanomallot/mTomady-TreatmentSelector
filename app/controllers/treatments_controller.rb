@@ -1,5 +1,8 @@
 class TreatmentsController < ApplicationController
   protect_from_forgery with: :null_session
+  before_action :authorized, only: [:auto_login]
+
+
   def fullindex
     treatments = Treatment.order("created_at DESC")
     render json: TreatmentSerializer.new(treatments).serialized_json

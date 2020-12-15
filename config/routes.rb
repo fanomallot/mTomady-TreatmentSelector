@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'admins/index'
-  get 'admins/show'
-  get 'admins/update'
+  
+  resources :admins, only:[:show,:create,:update,]
+  post "/login", to: "admins#login"
+  get "/auto_login", to: "admins#auto_login"
+  
   root 'page#index'
   resources :categories ,path: 'api/mtomady/category',controller: 'categories' do
     resources :treatments,controller: 'treatments',except: %i[show,new,edit]

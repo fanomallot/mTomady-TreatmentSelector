@@ -36,10 +36,12 @@
     "version_mg": "Malagasy version"
   },
   "login":{
-    "title": "Type username/password",
-    "plh_name": "Username",
+    "title": "Type your email/password",
+    "plh_name": "example@example.example",
     "plh_pass": "Password",
-    "welcome": "Welcome Dr"
+    "welcome": "Welcome Dr",
+    "message1": "The field must not be empty",
+    "message2":"Invalid username or password"
   },
   "left_menu":{
     "patient": "Patients list",

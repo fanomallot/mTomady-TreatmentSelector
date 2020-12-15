@@ -1,5 +1,6 @@
 class PatientsController < ApplicationController
   protect_from_forgery with: :null_session
+  before_action :authorized, only: [:auto_login]
   def index
     patients = Patient.order("created_at DESC")
     render json: PatientSerializer.new(patients).serialized_json
