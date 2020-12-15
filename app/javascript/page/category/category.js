@@ -15,6 +15,7 @@ class Category extends Component{
             filterTextTreatment: "",
             patient_name: "",
             status: 1
+            
         }
         this.findtextCategory = this.findtextCategory.bind(this)
         this.findtextTreatment = this.findtextTreatment.bind(this)
@@ -83,13 +84,13 @@ class Category extends Component{
                         <div className="form-field">
                         <div className="name">{t("treatment.welcome")} <span>{this.state.patient_name}</span> </div>
                             <Searchbar
-                            placeholder={("category.plh_find")}
+                            placeholder={t("category.plh_find")}
                             filterText={this.state.filterTextCategory}
                             onFindtext={this.findtextCategory}
                             />
                         </div>
                     </div>
-                    <div className="list-box-o make-overflow">
+                    <div className="list-box-o make-overflow ">
                         <CategoryList
                         onFindtextSearch={this.findtextTreatment}
                         filterText={this.state.filterTextTreatment}

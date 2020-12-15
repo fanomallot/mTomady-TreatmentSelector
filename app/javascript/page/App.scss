@@ -1,9 +1,56 @@
 @import './config';
 
 .language-box {
+  cursor: pointer;
+  div {
+    background: $bg_form;
+    margin: 10px;
+    padding: 5px;
+    width: 40px;
+    height: 30px;
+    img {
+      width: 100%;
+      height: 20px;
+    }
+  }
+}
+.langue {
   position: absolute;
-  top: 40px;
-  right: 40px;
+  top: 105px;
+  right: 20px;
+  div {
+    background: $bg_form;
+    margin: 10px;
+    padding: 5px;
+    width: 40px;
+    height: 30px;
+    img {
+      width: 100%;
+      height: 20px;
+    }
+    &:nth-child(1) {
+      animation: mymove 0.4s;
+    }
+    &:nth-child(2) {
+      animation: mymove 0.6s;
+    }
+    &:nth-child(3) {
+      animation: mymove 0.8s;
+    }
+  }
+}
+@keyframes mymove {
+  0% {
+    transform: translateY(-90px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 .home-big-box {
   display: flex;
@@ -34,6 +81,6 @@
 }
 .home-page {
   width: 100%;
-  min-height: 70vh;
+  min-height: 77.3vh;
   // padding: 25px;
 }

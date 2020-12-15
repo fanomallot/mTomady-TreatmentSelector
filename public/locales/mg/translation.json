@@ -7,7 +7,8 @@
   "home": {
     "title": "Tongasoa eto amin'ny mTomady Treatment",
     "button1":"Hitsabo tena",
-    "button2":"Dokotera aho"
+    "button2":"Dokotera aho",
+    "dash": "Fitantanan-draharaha"
   },
   "treatment": {
     "head": "Soraty ny anaranao",
@@ -41,7 +42,8 @@
     "plh_pass": "Ny teny miafina",
     "welcome": "Tonga soa Dr",
     "message1": "Tsy tokony foana ny saha",
-    "message2":"Mailaka na teny miafina tsy mety"
+    "message2":"Mailaka na teny miafina tsy mety",
+    "out": "Hivoaka"
   },
   "left_menu":{
     "patient": "Lisitry ny marary",

@@ -10,12 +10,13 @@ import './login.scss';
 
 class Login extends React.Component{
     render() {
-      const { error, t } = this.props
+      const { error } = this.props
+      const { t } = this.props
       const LoginSchema = Yup.object().shape({
         email: Yup.string()
-            .required(`${t("login.message1")}`),
+            .required("The field must not be empty"),
         password: Yup.string()
-            .required(`${t("login.message1")}`)
+            .required("The field must not be empty")
       });
       return(
         <div className="form-box flex-box">
@@ -34,11 +35,11 @@ class Login extends React.Component{
             <Form className="flex-box flex-d-c form-log-box">
                 <div>{t("login.title")}</div>
                 <Field name="email" type="name" required placeholder={t("login.plh_name")} />
-                { errors.email && touched.email ? ( <div className="text-red-600 text-sm font-bold">{errors.email}</div>) : null }  
+                { errors.email && touched.email ? ( <div className="text-red-600 text-sm font-bold">{t("login.message1")}</div>) : null }  
                 <Field name="password" type="password" required placeholder={t("login.plh_pass")}/>
-                {errors.password && touched.password ? (<div className="text-red-600 text-sm font-bold">{errors.password}</div>) : null}
+                {errors.password && touched.password ? (<div className="text-red-600 text-sm font-bold">{t("login.message1")}</div>) : null}
                 <label >
-                    { error}
+                  {error ? <div className="text-red-600 text-sm font-bold">{t("login.message2")}</div>: null}
                 </label>
                 <button type="submit">{t("treatment.button")}</button>
             </Form>
@@ -59,5 +60,5 @@ const mapDispatchToProps = (dispatch) => {
         userLoginAttempt: (values) => {dispatch(userLoginAttempt(values))}
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)  (withTranslation()(Login));
+export default connect(mapStateToProps, mapDispatchToProps)(withTranslation()(Login));
   

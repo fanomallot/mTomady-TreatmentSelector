@@ -7,7 +7,8 @@
   "home": {
     "title": "Bienvenue dans mTomady Treatment",
     "button1":"Obtenir un traitement",
-    "button2":"Je suis un médecin"
+    "button2":"Je suis un médecin",
+    "dash": "Administration"
   },
   "treatment": {
     "head": "Tapez votre nom",
@@ -41,7 +42,8 @@
     "plh_pass": "Mot de passe",
     "welcome": "Bienvenue Dr",
     "message1": "Le champ ne doit pas être vide",
-    "message2":"Email ou mot de passe incorrect"
+    "message2":"Email ou mot de passe incorrect",
+    "out": "Se déconnecter"
   },
   "left_menu":{
     "patient": "Liste des patients",

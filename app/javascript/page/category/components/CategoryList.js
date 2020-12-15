@@ -54,7 +54,7 @@ const CategoryList = ({ filterText, filterTextC, onFindtextSearch }) => {
                 (<>
                     <div className="search-box">
                         <Searchbar
-                        placeholder={("treatment.plh_find")}
+                        placeholder={t("treatment.plh_find")}
                         filterText={filterText}
                         onFindtext={onFindtextSearch}
                         />
@@ -71,7 +71,7 @@ const CategoryList = ({ filterText, filterTextC, onFindtextSearch }) => {
     )
     })
     
-    return <div>{List}</div>
+    return <div className="flex-box">{List}</div>
 }
 
 export default CategoryList;
