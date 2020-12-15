@@ -14,7 +14,7 @@ class Category extends Component{
             filterTextCategory: "",
             filterTextTreatment: "",
             patient_name: "",
-            status: 1
+            status: 0
             
         }
         this.findtextCategory = this.findtextCategory.bind(this)
