@@ -1,24 +1,38 @@
 class AdminsController < ApplicationController
-  def index
-    admin = Admin.all
-    render json: AdminSerializer.new(admin).serialized_json
-  end
+  protect_from_forgery with: :null_session
+  before_action :authorized, only: [:auto_login]
 
-  def show
-    admin = Admin.find(params[:id])
-    render json: AdminSerializer.new(admin).serialized_json
-  end
-
-  def update
-    admin = Admin.find(params[:id])
-    if admin.update(admin_params)
-        render json: AdminSerializer.new(patient).serialized_json
+  # REGISTER
+  def create
+    @user = Admin.create(user_params)
+    if @user.valid?
+      token = encode_token({user_id: @user.id})
+      render json: {user: @user, token: token}
     else
-        render json: {error: admin.errors.messages},status: 422 
+      render json: {error: "Invalid username or password"}
     end
   end
+
+  # LOGGING IN
+  def login
+    @user = Admin.find_by(email: params[:email])
+
+    if @user && @user.authenticate(params[:password])
+      token = encode_token({user_id: @user.id})
+      render json: {user: @user, token: token}
+    else
+      render json: {error: "Invalid username or password"}
+    end
+  end
+
+
+  def auto_login
+    render json: @user
+  end
+
   private
-  def admin_params
-    params.permit(:name,:email,:password)
+
+  def user_params
+    params.permit(:email, :password)
   end
 end

@@ -1,11 +1,12 @@
 class PatientsController < ApplicationController
   protect_from_forgery with: :null_session
+  before_action :authorized, only: [:auto_login]
   def index
-    patients = Patient.all
+    patients = Patient.order("created_at DESC")
     render json: PatientSerializer.new(patients).serialized_json
   end
   def show
-    patients = Patient.find(params[:id])
+    patients = Patient.find_by(params[:id])
     render json: PatientSerializer.new(patients).serialized_json
   end
   def create

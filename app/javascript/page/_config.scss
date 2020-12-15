@@ -1,0 +1,167 @@
+$main_theme_color: #6366f1;
+$main_theme_color_hover: #696be9d7;
+$border: 2px solid #6366f1;
+$border-radius: 15px;
+$box-shadow: 1px 0px 3px 1px rgba(#d6d6d633, 0);
+$color_text: #333333;
+$bg_form: #9ca3af;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.form-box {
+  height: 70vh;
+}
+.form {
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  background: $bg_form;
+  width: 35%;
+  padding: 50px 10px;
+  input {
+    width: 85%;
+    margin: 10px 0;
+  }
+}
+input {
+  border-radius: 5px;
+  padding: 10px;
+}
+.Title {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: $main_theme_color;
+}
+.flex-none {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-box {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-box-2 {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-d-c {
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+  margin: 15px;
+  border: $border;
+  padding: 10px 50px;
+  background: transparent;
+  color: $main_theme_color;
+  border-radius: $border-radius;
+  text-transform: uppercase;
+  font-weight: 550;
+  &:hover,
+  &:active {
+    color: white;
+    background-color: $main_theme_color;
+  }
+}
+.list-box-o {
+  background: $bg_form;
+  width: 90%;
+  margin: 0 auto;
+  padding: 5px;
+  &.b-bottom {
+    border-bottom: 1px solid white;
+  }
+  &.b-top {
+    border-top: 1px solid white;
+  }
+  &.make-overflow {
+    max-height: 900px;
+    overflow-y: auto;
+  }
+}
+
+// / custom check box
+#condition-check {
+  display: block;
+  position: relative;
+  // padding-left: 65px;
+  // margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: -2px;
+    left: 8px;
+    height: 20px;
+    width: 20px;
+    border: $border;
+    background-color: #c4c4c4;
+  }
+
+  &:hover input ~ .checkmark {
+    background-color: $main_theme_color;
+  }
+
+  input:checked ~ .checkmark {
+    background-color: $main_theme_color;
+  }
+
+  .checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+  }
+
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkmark:after {
+    left: 5px;
+    top: -4px;
+    width: 9px;
+    height: 19px;
+    border: solid black;
+    border-width: 0 5px 5px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}

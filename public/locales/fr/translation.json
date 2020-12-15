@@ -1,0 +1,57 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "treatments": "Traitements",
+    "categories": "Catégorie des traitements"
+  },
+  "home": {
+    "title": "Bienvenue dans mTomady Treatment",
+    "button1":"Obtenir un traitement",
+    "button2":"Je suis un médecin",
+    "dash": "Administration"
+  },
+  "treatment": {
+    "head": "Tapez votre nom",
+    "plh_name": "Nom",
+    "plh_namex": "Exemple Nom",
+    "plh_find": "Chercher un traitement",
+    "button": "Valider",
+    "title": "Liste des traitements",
+    "delete": "Etes-vous sure ?",
+    "create": "Créer un nouveau traitement",
+    "create_title": "Tapez le nom du nouveau traitement",
+    "edit_title": "Modifier le treatment",
+    "welcome": "Bienvenue",
+    "save": "Votre demande a été enregistrée",
+    "error": "Erreur d'enregistrement de la demande"
+  },
+  "category":{
+    "plh_find": "Chercher une catégorie",
+    "title": "Liste des catégories",
+    "create": "Créer une nouvelle catégorie",
+    "create_title": "Tapez le nom de la nouvelle catégorie",
+    "edit": "Modifier",
+    "edit_title": "Modifier la catégorie",
+    "version_en": "version anglaise",
+    "version_fr": "version française",
+    "version_mg": "version malgache"
+  },
+  "login":{
+    "title": "Tapez votre email / mot de passe",
+    "plh_name": "exemple@exemple.exemple",
+    "plh_pass": "Mot de passe",
+    "welcome": "Bienvenue Dr",
+    "message1": "Le champ ne doit pas être vide",
+    "message2":"Email ou mot de passe incorrect",
+    "out": "Se déconnecter"
+  },
+  "left_menu":{
+    "patient": "Liste des patients",
+    "category": "Modification "
+  },
+  "patient":{
+    "title":"Liste des patients",
+    "name": "Nom du patient",
+    "treatment": "Traitement"
+  }
+}

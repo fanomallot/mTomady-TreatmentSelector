@@ -20,3 +20,6 @@ categories = [Category.first,Category.last]
         Treatment.create(name: item , category: categories[i])
     end
 end
+
+Admin.create(email: "fafa@fa.fa", password: "1010")
+Admin.create(email: 'admin@admin.admin',password: 'admin@admin.admin')

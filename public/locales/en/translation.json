@@ -1,0 +1,57 @@
+{
+  "navbar": {
+    "home": "Home",
+    "treatments": "Treatments",
+    "categories": "Category of treatments"
+  },
+  "home": {
+    "title": "Welcome to mTomady Treatment",
+    "button1":"Get Treatment",
+    "button2":"I'm a Doctor",
+    "dash": "Admin Dashboard"
+  },
+  "treatment": {
+    "head": "Type your name",
+    "plh_name": "Name",
+    "plh_namex": "Example Name",
+    "plh_find": "Find treatment",
+    "button": "Submit",
+    "title": "Treatments list",
+    "create": "Create a new treatment",
+    "delete": "Are you sure ?",
+    "create_title": "Type new treatment's name",
+    "edit_title": "Edit treatment",
+    "welcome": "Welcome",
+    "save": "your request has been saved",
+    "error": "Error to save request"
+  },
+  "category":{
+    "plh_find": "Find a category of treatments",
+    "title": "Categories list",
+    "create": "Create a new category",
+    "create_title": "Type new category's name",
+    "edit": "Edit",
+    "edit_title": "Edit category",
+    "version_en": "English version",
+    "version_fr": "French version",
+    "version_mg": "Malagasy version"
+  },
+  "login":{
+    "title": "Type your email/password",
+    "plh_name": "example@example.example",
+    "plh_pass": "Password",
+    "welcome": "Welcome Dr",
+    "message1": "The field must not be empty",
+    "message2":"Invalid username or password",
+    "out": "Sign out"
+  },
+  "left_menu":{
+    "patient": "Patients list",
+    "category": "Data modification"
+  },
+  "patient":{
+    "title":"Patient list",
+    "name": "Patient name",
+    "treatment": "Treatment"
+  }
+}

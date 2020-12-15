@@ -1,0 +1,57 @@
+{
+  "navbar": {
+    "home": "Fandraisana",
+    "treatments": "Fitsaboana",
+    "categories": "Sokajim-pitsaboana"
+  },
+  "home": {
+    "title": "Tongasoa eto amin'ny mTomady Treatment",
+    "button1":"Hitsabo tena",
+    "button2":"Dokotera aho",
+    "dash": "Fitantanan-draharaha"
+  },
+  "treatment": {
+    "head": "Soraty ny anaranao",
+    "plh_name": "Anarana",
+    "plh_namex": "Anarana ohatra",
+    "plh_find": "Hikaroka fitsaboana",
+    "button": "Hanamafy",
+    "title": "Lisitry ny fitsaboana",
+    "delete": "Tena ho fafana ve ?",
+    "create": "Mamorona fitsaboana vaovao",
+    "create_title": "Soraty ny anaran'ny fitsaboana vaovao",
+    "edit_title": "Hanova ny fitsaboana",
+    "welcome": "Tonga soa",
+    "save": "Voatahiry ny fangatahanao",
+    "error": "Tsy voatahiry ny fangatahanao fa misy olana"
+  },
+  "category":{
+    "plh_find": "Hikaroka Sokajim-pitsaboana",
+    "title": "Lisitra ireo sokajim-pitsaboana",
+    "create": "Mamorona sokajy vaovao",
+    "create_title": "Soraty ny anaran'ny sokajy vaovao",
+    "edit": "Havaozina",
+    "edit_title": "Hanova ny sokajy",
+    "version_en": "Dikan-teny anglisy",
+    "version_fr": "Dikan-teny frantsay",
+    "version_mg": "Dikan-teny malagasy"
+  },
+  "login":{
+    "title": "Soraty ny mailaka / ny teny miafina",
+    "plh_name": "ohatra@ohatra.ohatra",
+    "plh_pass": "Ny teny miafina",
+    "welcome": "Tonga soa Dr",
+    "message1": "Tsy tokony foana ny saha",
+    "message2":"Mailaka na teny miafina tsy mety",
+    "out": "Hivoaka"
+  },
+  "left_menu":{
+    "patient": "Lisitry ny marary",
+    "category": "Fanovana data"
+  },
+  "patient":{
+    "title":"Lisitry ny marary",
+    "name": "Anaran'ny marary",
+    "treatment": "Fitsaboana"
+  }
+}
