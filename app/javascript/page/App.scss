@@ -18,6 +18,7 @@
   position: absolute;
   top: 105px;
   right: 20px;
+  z-index: 100;
   div {
     background: $bg_form;
     margin: 10px;
@@ -66,7 +67,6 @@
       margin: 10px;
       background: $main_theme_color;
       a {
-        background: #000;
         img,
         svg {
           position: absolute;
