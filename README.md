@@ -16,25 +16,23 @@ Une application permettant à un patient qui arrive dans une clinique de sélect
 
   https://gorails.com/
 
-- Documentation installation
-
-  https://medium.com/@zayneabraham/how-to-create-a-react-app-with-ruby-on-rails-548366a90185
-
 * Etape de lancement
+
   Lancer le terminal
+  
   Entrer les codes suivants :
   
   git clone https://github.com/fanomallot/mTomady-TreatmentSelector.git
 
-          cd mTomady-TreatmentSelector
+        cd mTomady-TreatmentSelector
 
-          bundle
+        bundle
 
-          rails db:create db:migrate db:seed
+        rails db:create db:migrate db:seed
 
-          yarn install --check-files
+        yarn install --check-files
 
-          rails s
+        rails s
 
   Admin login :
   
