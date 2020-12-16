@@ -174,16 +174,14 @@ button {
     width: 100%;
   }
   .home-big-box {
-    position: relative;
     .left-menu {
       position: absolute;
-      display: flex;
-      top: -35px;
+      top: 50px;
       .link-menu {
         width: 43px;
         a {
           width: 40px;
-          a {
+          i {
             display: none;
             width: 0;
             overflow: hidden;
@@ -204,12 +202,11 @@ button {
     position: relative;
     .left-menu {
       position: relative;
-      display: block;
       .link-menu {
         width: 280px;
         a {
           width: auto;
-          a {
+          i {
             display: inline;
             width: auto;
           }

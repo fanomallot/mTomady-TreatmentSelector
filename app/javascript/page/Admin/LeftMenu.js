@@ -11,13 +11,13 @@ const LeftMenu = () => {
         <div className="link-menu">
             <Link to={"/Admin-dashboard/patient-list"} title={t("left_menu.patient")}>
                 <FontAwesomeIcon icon={faUsers} />  
-               <a>{t("left_menu.patient")}</a> 
+               <i>{t("left_menu.patient")}</i> 
             </Link>
         </div>
         <div className="link-menu">
             <Link to={"/Admin-dashboard/category"} title={t("left_menu.category")}>
             <FontAwesomeIcon icon={faColumns} />  
-            <a>{t("left_menu.category")}</a> 
+            <i>{t("left_menu.category")}</i> 
             </Link>
         </div>
     </>
