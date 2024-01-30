@@ -2,7 +2,7 @@
 
 Une application permettant à un patient qui arrive dans une clinique de sélectionner le traitement qu'il souhaite recevoir.
 
-`Ruby version` 2.7.0
+`Ruby version` 2.7.4
 
 `Rails version` 6.0.3.4
 
@@ -19,9 +19,9 @@ Une application permettant à un patient qui arrive dans une clinique de sélect
 * Etape de lancement
 
   Lancer le terminal
-  
+
   Entrer les codes suivants :
-  
+
   git clone https://github.com/fanomallot/mTomady-TreatmentSelector.git
 
         cd mTomady-TreatmentSelector
@@ -35,7 +35,7 @@ Une application permettant à un patient qui arrive dans une clinique de sélect
         rails s
 
   Admin login :
-  
+
       email : admin@admin.admin
 
       password : admin@admin.admin
